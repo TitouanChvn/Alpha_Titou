@@ -12,7 +12,7 @@ import schedule
 import threading
 # import requests
 
-TOKEN = "NzM0MzM3MDA4NzQ2MzY0OTQ4.XxQP6g.pl59iTwZaG13MSSDWx4Z6zcFjLc"
+TOKEN = "XXXXXX"
 BOT_PREFIX = ("!", "?", "§")
 
 client = commands.Bot(command_prefix=BOT_PREFIX)
@@ -100,19 +100,19 @@ async def on_reaction_remove(reaction,user):
 @client.command()
 async def mon_id(ctx):
     await ctx.send(ctx.author.id)
-#Mon id est 457878731097243649
+#Mon id est MyId
 
 @client.event
 async def on_message(message):
-    if isinstance(message.channel, PrivateChannel) and message.author != client.user and message.author.id != 457878731097243649:
-        tit = await client.fetch_user(457878731097243649)
+    if isinstance(message.channel, PrivateChannel) and message.author != client.user and message.author.id != MyId:
+        tit = await client.fetch_user(MyId)
         await tit.send(f"{message.author} m'a envoyé en privé : {message.content}")
     await client.process_commands(message)
 
 
 
 def job():
-    # tit = await client.fetch_user(457878731097243649)
+    # tit = await client.fetch_user(MyId)
     # tit.send(f"Test toutes les minutes")
     print("test toutes les minutes")
 
